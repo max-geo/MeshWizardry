@@ -1,0 +1,3 @@
+ # This makes it so that clangd knows where it can find compile_commands.json, exported by cmake; this way it recognizes raylib.
+CompileFlags:
+  CompilationDatabase: build/

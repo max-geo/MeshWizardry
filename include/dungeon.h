@@ -1,22 +1,21 @@
+#pragma once
 #include <raylib.h>
 #include <vector>
 
-using namespace std;
-
 struct Wall {
   Vector3 position = {};
-  Model model;
 };
 
 struct module {
-  Wall east;
-  Wall west;
-  Wall north;
-  Wall south;
+  Vector3 position;
+  bool east;
+  bool west;
+  bool north;
+  bool south;
 };
 
 struct Map {
-  vector<module> modules;
+  std::vector<module> modules;
 };
 
 class Dungeon {

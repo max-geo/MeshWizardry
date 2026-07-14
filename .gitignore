@@ -1,0 +1,13 @@
+# Build directories
+build/
+out/
+
+# Compiled binaries
+*.exe
+*.dll
+*.lib
+*.a
+*.so
+*.o
+*.obj
+*.pdb

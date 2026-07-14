@@ -11,6 +11,6 @@ Wall Dungeon::createWall() {
   Mesh wallMesh = GenMeshCube(30, 10, 5);
   Model wallModel = LoadModelFromMesh(wallMesh);
 
-  Wall Wall{{10, 0, 10}, wallModel};
+  Wall Wall{10, 0, 10};
   return Wall;
 }

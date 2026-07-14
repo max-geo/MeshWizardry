@@ -27,5 +27,5 @@ public:
 private:
   Map generateMap();
 
-  vector<Wall> walls;
+  std::vector<Wall> walls;
 };

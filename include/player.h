@@ -9,7 +9,5 @@ public:
   Player(Camera3D camera);
   void move(InputState input);
   void updateCamera();
-
-private:
   Vector3 position;
 };

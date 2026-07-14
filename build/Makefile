@@ -251,6 +251,30 @@ update_mappings/fast:
 	$(MAKE) $(MAKESILENT) -f _deps\raylib-build\raylib\external\glfw\src\CMakeFiles\update_mappings.dir\build.make _deps/raylib-build/raylib/external/glfw/src/CMakeFiles/update_mappings.dir/build
 .PHONY : update_mappings/fast
 
+src/dungeon.obj: src/dungeon.cpp.obj
+.PHONY : src/dungeon.obj
+
+# target to build an object file
+src/dungeon.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\meshWizardry.dir\build.make CMakeFiles/meshWizardry.dir/src/dungeon.cpp.obj
+.PHONY : src/dungeon.cpp.obj
+
+src/dungeon.i: src/dungeon.cpp.i
+.PHONY : src/dungeon.i
+
+# target to preprocess a source file
+src/dungeon.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\meshWizardry.dir\build.make CMakeFiles/meshWizardry.dir/src/dungeon.cpp.i
+.PHONY : src/dungeon.cpp.i
+
+src/dungeon.s: src/dungeon.cpp.s
+.PHONY : src/dungeon.s
+
+# target to generate assembly for a file
+src/dungeon.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\meshWizardry.dir\build.make CMakeFiles/meshWizardry.dir/src/dungeon.cpp.s
+.PHONY : src/dungeon.cpp.s
+
 src/input.obj: src/input.cpp.obj
 .PHONY : src/input.obj
 
@@ -342,6 +366,9 @@ help:
 	@echo ... glfw
 	@echo ... meshWizardry
 	@echo ... raylib
+	@echo ... src/dungeon.obj
+	@echo ... src/dungeon.i
+	@echo ... src/dungeon.s
 	@echo ... src/input.obj
 	@echo ... src/input.i
 	@echo ... src/input.s

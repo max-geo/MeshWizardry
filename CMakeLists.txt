@@ -20,6 +20,7 @@ set(SOURCES
 		src/main.cpp
 		src/input.cpp
 		src/player.cpp
+		src/dungeon.cpp
 		# src/camera_controller.cpp
 )
 

@@ -1,5 +1,6 @@
 #include <raylib.h>
 
+#include "dungeon.h"
 #include "input.h"
 #include "player.h"
 
@@ -25,6 +26,9 @@ int main(void) {
 
   InputHandler inputHandler;
   Player player = Player(camera);
+  Dungeon dungeon = Dungeon();
+
+  Wall wall = dungeon.createWall();
 
   while (!WindowShouldClose()) {
     InputState input = inputHandler.handleInput();
@@ -38,6 +42,7 @@ int main(void) {
 
     DrawModelWires(cubeModel, {20, -5, 0}, 1, WHITE);
     DrawGrid(10, 1.0f);
+    DrawModelWires(wall.model, wall.position, 1, WHITE);
 
     EndMode3D();
     EndDrawing();

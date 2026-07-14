@@ -18,6 +18,12 @@
   "output": "CMakeFiles/meshWizardry.dir/src/player.cpp.obj"
 },
 {
+  "directory": "C:/Users/Maxge/Documents/Coding/C++/MeshWizardry/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP @CMakeFiles/meshWizardry.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\meshWizardry.dir\\src\\dungeon.cpp.obj -c C:\\Users\\Maxge\\Documents\\Coding\\C++\\MeshWizardry\\src\\dungeon.cpp",
+  "file": "C:/Users/Maxge/Documents/Coding/C++/MeshWizardry/src/dungeon.cpp",
+  "output": "CMakeFiles/meshWizardry.dir/src/dungeon.cpp.obj"
+},
+{
   "directory": "C:/Users/Maxge/Documents/Coding/C++/MeshWizardry/build/_deps/raylib-build/raylib",
   "command": "C:\\msys64\\mingw64\\bin\\cc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -D_CRT_SECURE_NO_WARNINGS @CMakeFiles/raylib.dir/includes_C.rsp -fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -std=gnu99 -o CMakeFiles\\raylib.dir\\raudio.c.obj -c C:\\Users\\Maxge\\Documents\\Coding\\C++\\MeshWizardry\\build\\_deps\\raylib-src\\src\\raudio.c",
   "file": "C:/Users/Maxge/Documents/Coding/C++/MeshWizardry/build/_deps/raylib-src/src/raudio.c",

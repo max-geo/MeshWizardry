@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/meshWizardry.dir/src/dungeon.cpp.obj"
+  "CMakeFiles/meshWizardry.dir/src/dungeon.cpp.obj.d"
   "CMakeFiles/meshWizardry.dir/src/input.cpp.obj"
   "CMakeFiles/meshWizardry.dir/src/input.cpp.obj.d"
   "CMakeFiles/meshWizardry.dir/src/main.cpp.obj"

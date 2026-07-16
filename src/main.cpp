@@ -1,5 +1,7 @@
 #include <raylib.h>
+#include <raymath.h>
 
+#include "direction.h"
 #include "dungeon.h"
 #include "input.h"
 #include "player.h"
@@ -23,7 +25,7 @@ int main(void) {
                      CAMERA_PERSPECTIVE};
 
   InputHandler inputHandler;
-  Player player = Player(camera);
+  Player player = Player();
   Dungeon dungeon = Dungeon();
 
   dungeon.generateMap();
@@ -36,7 +38,7 @@ int main(void) {
 
     InputState input = inputHandler.handleInput();
 
-    player.move(input);
+    player.move(input, true);
     player.updateCamera();
 
     BeginDrawing();
@@ -50,14 +52,17 @@ int main(void) {
     }
 
     for (HUDProp &h : player.HUDProps) {
+      Vector3 forward = DirectionVectors[player.facing];
+      Vector3 right = DirectionVectors[rotateRight(player.facing)];
+
+      Vector3 pos = player.pos;
+      pos = Vector3Add(pos, Vector3Scale(right, h.offset.x));
+      pos = Vector3Add(pos, {0.0f, h.offset.y, 0.0f});
+      pos = Vector3Add(pos, Vector3Scale(forward, h.offset.z));
+
       UpdateModelAnimation(h.model, h.animations[0], frame);
-      DrawModelWires(h.model,
-                     {
-                         player.pos.x + h.offset.x,
-                         player.pos.y + h.offset.y,
-                         player.pos.z + h.offset.z,
-                     },
-                     h.scale, WHITE);
+      DrawModelWiresEx(h.model, pos, {0, 1, 0}, player.facing * 90, h.scale,
+                       WHITE);
     }
 
     EndMode3D();

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <raylib.h>
+
 struct InputState {
   bool forward = false;
   bool backward = false;

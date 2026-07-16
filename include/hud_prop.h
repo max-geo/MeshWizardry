@@ -7,7 +7,7 @@ struct HUDProp {
   Vector3 offset;
   int rotationSpeed;
   int angle;
-  float scale;
+  Vector3 scale;
   ModelAnimation *animations;
   int animCount = 0;
 };

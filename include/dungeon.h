@@ -3,10 +3,10 @@
 #include <vector>
 
 struct Wall {
-  Vector3 position = {};
+  Vector3 pos = {};
   int rotation = 0;
 
-  int width = 5;
+  int width = 6;
   int length = 30;
   int height = 10;
 };
@@ -18,6 +18,7 @@ struct Module {
   bool north;
   bool south;
 };
+// TODO: make module init more intuitve/readable
 
 struct Map {
   std::vector<Module> modules;
@@ -36,7 +37,7 @@ public:
 
   Model wallModel;
 
-  Map generateMap();
+  void generateMap();
 
 private:
   static constexpr float ModuleSize = 30.0f;

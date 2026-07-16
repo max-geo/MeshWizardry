@@ -5,8 +5,6 @@
 #include "player.h"
 #include "ui.h"
 
-#include <iostream>
-
 int main(void) {
   UI ui;
 
@@ -28,11 +26,14 @@ int main(void) {
   Player player = Player(camera);
   Dungeon dungeon = Dungeon();
 
-  dungeon.modules.push_back(Module{{10, 0, 40}, true, true, true, true});
-
+  dungeon.generateMap();
   dungeon.generateWalls();
 
+  int frame = 0;
   while (!WindowShouldClose()) {
+
+    frame++;
+
     InputState input = inputHandler.handleInput();
 
     player.move(input);
@@ -43,14 +44,25 @@ int main(void) {
 
     BeginMode3D(player.camera);
 
-    for (Wall w : dungeon.walls) {
-      DrawModelWiresEx(dungeon.wallModel, w.position, {0, 1, 0}, w.rotation,
+    for (Wall &w : dungeon.walls) {
+      DrawModelWiresEx(dungeon.wallModel, w.pos, {0, 1, 0}, w.rotation,
                        {1, 1, 1}, WHITE);
+    }
+
+    for (HUDProp &h : player.HUDProps) {
+      UpdateModelAnimation(h.model, h.animations[0], frame);
+      DrawModelWires(h.model,
+                     {
+                         player.pos.x + h.offset.x,
+                         player.pos.y + h.offset.y,
+                         player.pos.z + h.offset.z,
+                     },
+                     h.scale, WHITE);
     }
 
     EndMode3D();
 
-    ui.printCoords(player.position);
+    ui.printCoords(player.pos);
 
     EndDrawing();
   }

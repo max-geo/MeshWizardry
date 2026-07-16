@@ -1,26 +1,35 @@
 #include "player.h"
+#include "hud_prop.h"
 #include "input.h"
 
-#include <iostream>
-
 Player::Player(Camera3D camera) {
-  position = camera.position;
+  pos = camera.position;
   this->camera = camera;
+
+  HUDProp cube;
+
+  // init handheld hudprop items
+  cube.model = LoadModel("../assets/tesseract.glb");
+  cube.offset = {-0.7, -0.4f, 0.8f};
+  cube.animations =
+      LoadModelAnimations("../assets/tesseract.glb", &cube.animCount);
+  cube.scale = 0.1;
+  HUDProps.push_back(cube);
 }
 
 void Player::move(InputState input) {
   if (input.forward)
-    position.z += 1;
+    pos.z += 15;
   if (input.backward)
-    position.z -= 1;
+    pos.z -= 15;
   if (input.left)
-    position.x += 1;
+    pos.x += 1;
   if (input.right)
-    position.x -= 1;
+    pos.x -= 1;
   if (input.up)
-    position.y += 1;
+    pos.y += 1;
   if (input.down)
-    position.y -= 1;
+    pos.y -= 1;
 }
 
-void Player::updateCamera() { camera.position = position; }
+void Player::updateCamera() { camera.position = pos; }

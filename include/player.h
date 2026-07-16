@@ -1,7 +1,9 @@
 #pragma once
 
+#include "hud_prop.h"
 #include "input.h"
 #include "raylib.h"
+#include <vector>
 
 class Player {
 public:
@@ -9,5 +11,6 @@ public:
   Player(Camera3D camera);
   void move(InputState input);
   void updateCamera();
-  Vector3 position;
+  Vector3 pos;
+  std::vector<HUDProp> HUDProps;
 };

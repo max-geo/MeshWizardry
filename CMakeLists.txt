@@ -23,7 +23,7 @@ set(SOURCES
 		src/dungeon.cpp
 		src/ui.cpp
 		src/direction.cpp
-		# src/camera_controller.cpp
+		src/render.cpp
 )
 
 add_executable(meshWizardry ${SOURCES})

@@ -1,5 +1,3 @@
-#include <cmath>
-
 #include "raylib.h"
 #include "raymath.h"
 
@@ -7,8 +5,6 @@
 #include "hud_prop.h"
 #include "input.h"
 #include "player.h"
-
-#include <iostream>
 
 Player::Player() {
   pos = {-2.5, 5, 10};

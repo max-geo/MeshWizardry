@@ -1,6 +1,9 @@
 #pragma once
+
 #include <raylib.h>
 #include <vector>
+
+#include "direction.h"
 
 struct Wall {
   Vector3 pos = {};
@@ -13,10 +16,7 @@ struct Wall {
 
 struct Module {
   Vector3 pos;
-  bool east;
-  bool west;
-  bool north;
-  bool south;
+  std::vector<Direction> wallDirs;
 };
 // TODO: make module init more intuitve/readable
 
@@ -38,6 +38,8 @@ public:
   Model wallModel;
 
   void generateMap();
+  void convertGraph();
+  void generateGraph();
 
 private:
   static constexpr float ModuleSize = 30.0f;

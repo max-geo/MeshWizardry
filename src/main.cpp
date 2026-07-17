@@ -18,13 +18,6 @@ int main(void) {
 
   SetTargetFPS(60);
 
-  Vector3 camera_pos = {0, 5, -15};
-  Vector3 camera_lookAt = {0, 5, 100};
-  Vector3 camera_lookUp = {0, 1, 0};
-
-  Camera3D camera = {camera_pos, camera_lookAt, camera_lookUp, 90,
-                     CAMERA_PERSPECTIVE};
-
   InputHandler inputHandler;
   Player player = Player();
   Dungeon dungeon = Dungeon();

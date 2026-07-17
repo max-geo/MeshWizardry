@@ -10,5 +10,4 @@ class Renderer {
 public:
   void renderDungeon(Dungeon &d);
   void renderHUDProps(Player &p, int frame);
-  void drawUI();
 };
